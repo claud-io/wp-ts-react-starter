@@ -1,0 +1,55 @@
+{
+  "name": "dunno",
+  "bin": {
+    "d-init": "index.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-transform-regenerator": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "@babel/runtime": "^7.12.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "copy-webpack-plugin": "^6.3.0",
+    "dotenv-webpack": "^5.0.1",
+    "eslint": "^7.12.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.2.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "prettier": "^2.1.2",
+    "regenerator-runtime": "^0.13.7",
+    "terser-webpack-plugin": "^1.4.5",
+    "ts-loader": "^8.0.9",
+    "typescript": "^4.0.5",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@types/styled-components": "^5.1.4",
+    "@types/webpack-env": "^1.15.3",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "build": "webpack --config ./webpack.prod.js --mode production",
+    "dev": "webpack serve",
+    "watch": "webpack --config ./webpack.config.js --mode development"
+  }
+}
