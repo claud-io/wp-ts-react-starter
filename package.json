@@ -5,6 +5,10 @@
   "bin": {
     "setup": "setup.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claud-io/wp-ts-react-starter"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-transform-regenerator": "^7.12.1",
