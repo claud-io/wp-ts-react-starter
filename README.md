@@ -1,5 +1,7 @@
 # wp-ts-react-starter
 
+[![npm version](https://badge.fury.io/js/wp-ts-react-starter.svg)](https://badge.fury.io/js/wp-ts-react-starter)
+
 more energy, more automation!
 
 Quickly start development leaving the setup part to me
