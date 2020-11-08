@@ -69,7 +69,7 @@ module.exports = {
   },
   plugins: [new webpack.DefinePlugin({ __DEV__: true }), new Dotenv()],
   devServer: {
-    // contentBase: path.resolve(__dirname, 'public'),
+    contentBase: path.resolve(__dirname, 'public'),
     liveReload: true,
     port: 9000,
     historyApiFallback: true,
