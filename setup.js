@@ -11,14 +11,20 @@ const BASE_FILES = [
   'webpack.config.js',
   'webpack.prod.js',
   'public/index.html',
+
+  'src/api/index.ts',
+
   'src/components/Home.tsx',
   'src/components/Login.tsx',
   'src/components/PrivateRoute.tsx',
+
+  'src/constants/index.d.ts',
   'src/constants/types.ts',
+
   'src/contexts/AuthContext.ts',
   'src/contexts/index.ts',
+
   'src/index.tsx',
-  'resources/index.html',
 ];
 
 function copy(from, to, overwrite = true) {
@@ -45,10 +51,10 @@ const newPackage = {
 fs.writeFileSync(`${currentDir}/package.json`, JSON.stringify(newPackage, null, 2));
 
 fs.mkdirSync(`${currentDir}/src`);
+fs.mkdirSync(`${currentDir}/src/api`);
 fs.mkdirSync(`${currentDir}/src/components`);
 fs.mkdirSync(`${currentDir}/src/constants`);
 fs.mkdirSync(`${currentDir}/src/contexts`);
-fs.mkdirSync(`${currentDir}/src/resources`);
 fs.mkdirSync(`${currentDir}/public`);
 
 BASE_FILES.forEach((f) => {
