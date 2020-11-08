@@ -1,5 +1,9 @@
 {
   "name": "wp-ts-react-starter",
+  "author": {
+    "name": "claudio biselli",
+    "email": "cbiselli89@gmail.com"
+  },
   "version": "0.1.15",
   "description": "custom react boilerplate using webpack 5 and typescript",
   "bin": {
