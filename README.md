@@ -15,17 +15,20 @@ $ npx wp-ts-react-starter
 will create the following structure in the working folder.
 
 ```
-.
-├── package.json
-├── public
-│   └── index.html
-├── src
-│   ├── components
-│   │   └── App.tsx
-│   └── index.tsx
-├── tsconfig.json
-├── webpack.config.js
-└── webpack.prod.js
+├── api
+│   └── index.ts
+├── components
+│   ├── Home.tsx
+│   ├── Login.tsx
+│   └── PrivateRoute.tsx
+├── constants
+│   ├── index.d.ts
+│   └── types.ts
+├── contexts
+│   ├── AuthContext.ts
+│   └── index.ts
+└── index.tsx
 
 ```
+
 Now you can start adding bugs
