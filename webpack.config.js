@@ -67,7 +67,7 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js',
   },
-  plugins: [new webpack.DefinePlugin({ __DEV__: true }), new Dotenv()],
+  plugins: [new webpack.DefinePlugin({ __DEVMODE__: true }), new Dotenv()],
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     liveReload: true,

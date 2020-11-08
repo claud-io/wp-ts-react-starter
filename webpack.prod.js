@@ -1,10 +1,10 @@
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -62,7 +62,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    minimizer: [new TerserPlugin({}), new CssMinimizerPlugin()],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -73,9 +73,9 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
-    new CopyPlugin({  patterns: [ { from: 'src/resources', to: '' } ] }),
-    new HtmlWebpackPlugin(),
-    new webpack.DefinePlugin({ __DEV__: false }),
+    new CopyPlugin({ patterns: [{ from: 'public', to: '' }] }),
+    // new HtmlWebpackPlugin(),
+    new webpack.DefinePlugin({ __DEVMODE__: false }),
     new Dotenv(),
   ],
 };

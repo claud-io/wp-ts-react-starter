@@ -11,7 +11,6 @@ export interface RouteProps {
 const PrivateRoute: React.FC<RouteProps> = ({ component: Component, ...rest }) => {
   if (!Component) return null;
   const { authenticated } = useContext(AuthConext);
-  console.log('private route, checking authenticated: ', authenticated);
   return (
     <Route
       {...rest}
