@@ -10,9 +10,15 @@ const BASE_FILES = [
   'tsconfig.json',
   'webpack.config.js',
   'webpack.prod.js',
-  'src/index.tsx',
-  'src/components/App.tsx',
   'public/index.html',
+  'src/components/Home.tsx',
+  'src/components/Login.tsx',
+  'src/components/PrivateRoute.tsx',
+  'src/constants/types.ts',
+  'src/contexts/AuthContext.ts',
+  'src/contexts/index.ts',
+  'src/index.tsx',
+  'resources/index.html',
 ];
 
 function copy(from, to, overwrite = true) {
@@ -40,6 +46,9 @@ fs.writeFileSync(`${currentDir}/package.json`, JSON.stringify(newPackage, null, 
 
 fs.mkdirSync(`${currentDir}/src`);
 fs.mkdirSync(`${currentDir}/src/components`);
+fs.mkdirSync(`${currentDir}/src/constants`);
+fs.mkdirSync(`${currentDir}/src/contexts`);
+fs.mkdirSync(`${currentDir}/src/resources`);
 fs.mkdirSync(`${currentDir}/public`);
 
 BASE_FILES.forEach((f) => {

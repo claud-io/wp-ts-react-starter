@@ -1,6 +1,6 @@
 {
   "name": "wp-ts-react-starter",
-  "version": "0.1.10",
+  "version": "0.1.15",
   "description": "custom react boilerplate using webpack 5 and typescript",
   "bin": {
     "setup": "setup.js"
