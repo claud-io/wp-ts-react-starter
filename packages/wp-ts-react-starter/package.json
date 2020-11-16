@@ -4,7 +4,7 @@
     "name": "claudio biselli",
     "email": "cbiselli89@gmail.com"
   },
-  "version": "0.1.26",
+  "version": "0.1.27",
   "license": "MIT",
   "description": "custom react boilerplate using webpack 5 and typescript",
   "bin": {
