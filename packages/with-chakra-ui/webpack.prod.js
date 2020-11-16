@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CopyPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: ['./src/index.tsx'],
@@ -60,12 +61,12 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin({}), new CssMinimizerPlugin()],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -74,8 +75,12 @@ module.exports = {
   },
   plugins: [
     new CopyPlugin({ patterns: [{ from: 'public', to: '' }] }),
-    // new HtmlWebpackPlugin(),
     new webpack.DefinePlugin({ __DEVMODE__: false }),
     new Dotenv(),
+    new BundleAnalyzerPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[name]_[id].css',
+    }),
   ],
 };

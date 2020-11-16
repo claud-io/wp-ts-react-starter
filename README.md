@@ -9,26 +9,10 @@ Quickly start development leaving the setup part to me
 ## Usage
 
 ```bash
-$ npx wp-ts-react-starter
+Usage: wp-ts-react-starter <project-name>
+
+Options:
+  -V, --version  output the version number
+  --chakra       use the chakra version with pre-loaded login page
+  -h, --help     output usage information
 ```
-
-will create the following structure in the working folder.
-
-```
-├── api
-│   └── index.ts
-├── components
-│   ├── Home.tsx
-│   ├── Login.tsx
-│   └── PrivateRoute.tsx
-├── constants
-│   ├── index.d.ts
-│   └── types.ts
-├── contexts
-│   ├── AuthContext.ts
-│   └── index.ts
-└── index.tsx
-
-```
-
-Now you can start adding bugs
