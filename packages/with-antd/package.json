@@ -1,5 +1,5 @@
 {
-  "name": "vanilla",
+  "name": "with-antd",
   "version": "0.0.1",
   "devDependencies": {
     "@babel/core": "^7.12.3",

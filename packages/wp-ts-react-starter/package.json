@@ -25,7 +25,7 @@
     "v:minor": "yarn version --minor --no-git-tag-version",
     "v:major": "yarn version --major --no-git-tag-version",
     "prepublishOnly": "cp -R ../vanilla . && cp -R ../with-antd . && cp -R ../with-chakra-ui .",
-    "postpublish": "rm -rf vanilla with-chakra-ui with-antd"
+    "postpublish": "rm -rf  vanilla with-chakra-ui with-antd"
   },
   "dependencies": {
     "chalk": "^3.0.0",
