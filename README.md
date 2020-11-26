@@ -2,14 +2,12 @@
 
 [![npm version](https://badge.fury.io/js/wp-ts-react-starter.svg)](https://badge.fury.io/js/wp-ts-react-starter)
 
-more energy, more automation!
 
-Quickly start development leaving the setup part to me
 
 ## Usage
 
 ```bash
-Usage: wp-ts-react-starter <project-name>
+npx wp-ts-react-starter <project-name>
 
 Options:
   -V, --version  output the version number
