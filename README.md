@@ -14,5 +14,6 @@ Usage: wp-ts-react-starter <project-name>
 Options:
   -V, --version  output the version number
   --chakra       use the chakra version with pre-loaded login page
+  --antd       use the antd version with pre-loaded login page
   -h, --help     output usage information
 ```

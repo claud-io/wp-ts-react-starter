@@ -16,6 +16,7 @@ const program = new commander.Command(packageJson.name)
     projectName = name;
   })
   .option('--chakra', 'use the chakra version with pre-loaded login page')
+  .option('--antd', 'use the antd version with pre-loaded login page')
   .parse(process.argv);
 
 if (typeof projectName === 'undefined') {
@@ -34,7 +35,14 @@ if (fs.existsSync(projectDestination)) {
   process.exit(1);
 }
 
-fs.copySync(path.join(__dirname, program.chakra ? 'with-chakra-ui' : 'vanilla'), projectDestination);
+let source = 'vanilla';
+if (program.chakra) {
+  source = 'with-chakra-ui';
+} else if (program.antd) {
+  source = 'with-antd';
+}
+
+fs.copySync(path.join(__dirname, source), projectDestination);
 
 process.chdir(projectDestination);
 
