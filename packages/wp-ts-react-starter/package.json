@@ -4,7 +4,7 @@
     "name": "claudio biselli",
     "email": "cbiselli89@gmail.com"
   },
-  "version": "0.1.32",
+  "version": "0.1.33",
   "license": "MIT",
   "description": "custom react boilerplate using webpack 5 and typescript",
   "bin": {
@@ -17,13 +17,14 @@
   "files": [
     "vanilla",
     "with-chakra-ui",
+    "with-antd",
     "setup.js"
   ],
   "scripts": {
     "v:patch": "yarn version --patch --no-git-tag-version",
     "v:minor": "yarn version --minor --no-git-tag-version",
     "v:major": "yarn version --major --no-git-tag-version",
-    "prepublishOnly": "yarn v:patch && cp -R ../vanilla . && cp -R ../with-chakra-ui .",
+    "prepublishOnly": "cp -R ../vanilla . && cp -R ../with-antd . && cp -R ../with-chakra-ui .",
     "postpublish": "rm -rf vanilla with-chakra-ui"
   },
   "dependencies": {
