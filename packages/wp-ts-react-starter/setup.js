@@ -5,6 +5,7 @@ const execSync = require('child_process').execSync;
 const packageJson = require('./package.json');
 const fs = require('fs-extra');
 const path = require('path');
+const cowsay = require('cowsay');
 
 let projectName;
 
@@ -47,3 +48,11 @@ fs.copySync(path.join(__dirname, source), projectDestination);
 process.chdir(projectDestination);
 
 execSync('yarn install', { stdio: [0, 1, 2] });
+
+console.log(
+  cowsay.say({
+    text: 'setup completed! try running yarn dev in the project folder.',
+    e: 'oO',
+    T: 'U ',
+  })
+);

@@ -1,39 +1,45 @@
-const TerserPlugin = require('terser-webpack-plugin');
-const path = require('path');
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const Dotenv = require('dotenv-webpack');
-const CopyPlugin = require('copy-webpack-plugin');
-const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
 
-module.exports = {
-  entry: ['./src/index.tsx'],
+module.exports = merge(common, {
+  mode: 'production',
+
+  devtool: false,
+
+  optimization: {
+    minimize: true,
+    minimizer: ['...', new CssMinimizerPlugin()],
+    runtimeChunk: {
+      name: 'runtime',
+    },
+  },
+
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
+
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
         test: /\.less$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              sourceMap: false,
             },
           },
           {
             loader: 'less-loader',
             options: {
+              sourceMap: false,
               lessOptions: {
                 javascriptEnabled: true,
               },
@@ -41,47 +47,15 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
-      },
     ],
   },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin({}), new CssMinimizerPlugin()],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    publicPath: '/',
-    filename: 'bundle.js',
-  },
+
   plugins: [
-    new CopyPlugin({ patterns: [{ from: 'public', to: '' }] }),
-    // new HtmlWebpackPlugin(),
-    new AntdDayjsWebpackPlugin(),
     new webpack.DefinePlugin({ __DEVMODE__: false }),
-    new Dotenv(),
+    new BundleAnalyzerPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[name]_[id].css',
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].css',
     }),
   ],
-};
+});
