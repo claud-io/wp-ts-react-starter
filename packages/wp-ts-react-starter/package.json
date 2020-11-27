@@ -4,7 +4,7 @@
     "name": "claudio biselli",
     "email": "cbiselli89@gmail.com"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "description": "custom react boilerplate using webpack 5 and typescript",
   "bin": {
@@ -40,6 +40,7 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "commander": "^4.0.1",
+    "cowsay": "^1.4.0",
     "fs-extra": "^8.1.0"
   }
 }
