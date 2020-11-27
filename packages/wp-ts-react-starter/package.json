@@ -4,7 +4,7 @@
     "name": "claudio biselli",
     "email": "cbiselli89@gmail.com"
   },
-  "version": "0.1.35",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "custom react boilerplate using webpack 5 and typescript",
   "bin": {
@@ -19,6 +19,16 @@
     "with-chakra-ui",
     "with-antd",
     "setup.js"
+  ],
+  "keywords": [
+    "react",
+    "webpack",
+    "chakra-ui",
+    "antd",
+    "axios",
+    "lockr",
+    "typescript",
+    "jwt"
   ],
   "scripts": {
     "v:patch": "yarn version --patch --no-git-tag-version",
