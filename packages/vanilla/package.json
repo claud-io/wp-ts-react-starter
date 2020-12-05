@@ -52,7 +52,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
-    "use-jwt-manager": "^0.1.66"
+    "use-jwt-manager": "^0.1.72"
   },
   "scripts": {
     "build": "webpack --config ./webpack.prod.js",

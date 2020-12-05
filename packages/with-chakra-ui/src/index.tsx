@@ -12,6 +12,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { Layout } from './components/Layout';
 import './style/index.less';
 import { overrides } from './style/theme';
+import useInterceptor from './hooks/useInterceptor';
 
 const Router: React.FC = ({ children }) => {
   if (DEVMODE) {
@@ -24,6 +25,7 @@ const Router: React.FC = ({ children }) => {
 export const Root: React.FC<{}> = ({}) => {
   const config = { TOKEN_KEY, REFRESH_TOKEN_KEY };
   const authContext = useJWT({ login, me, refresh, config });
+  useInterceptor();
 
   return (
     <ChakraProvider theme={overrides}>

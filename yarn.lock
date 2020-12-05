@@ -8451,10 +8451,10 @@ use-callback-ref@^1.2.1, use-callback-ref@^1.2.3:
   resolved "https://registry.yarnpkg.com/use-callback-ref/-/use-callback-ref-1.2.4.tgz#d86d1577bfd0b955b6e04aaf5971025f406bea3c"
   integrity sha512-rXpsyvOnqdScyied4Uglsp14qzag1JIemLeTWGKbwpotWht57hbP78aNT+Q4wdFKQfQibbUX4fb6Qb4y11aVOQ==
 
-use-jwt-manager@^0.1.66:
-  version "0.1.66"
-  resolved "https://registry.yarnpkg.com/use-jwt-manager/-/use-jwt-manager-0.1.66.tgz#ccd9d4918389ccdc5c9ec8ce3af5046cb6491f50"
-  integrity sha512-RFxjt2WOinWpy8q9B0ij5g0ib+HsVUqJMezd8XTievFDcqknzMXpIeaqGr+6U4PmlfB/171LtaSZV+ZgtWYRpg==
+use-jwt-manager@^0.1.72:
+  version "0.1.72"
+  resolved "https://registry.yarnpkg.com/use-jwt-manager/-/use-jwt-manager-0.1.72.tgz#2e874d7be0b520c974aaaf9f93aa2fff41073aeb"
+  integrity sha512-SkMpkk7YGvDhznTe1Y14g7BJO9R4QYZtZZnF30fn/mUQe5ZBBpf1am1EFhXlV56zYFdl0xEYrwFX/MoF+bw8ug==
 
 use-sidecar@^1.0.1:
   version "1.0.3"
