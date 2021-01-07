@@ -11,6 +11,7 @@ import { login, me, refresh } from './api';
 import { Layout } from './components/Layout';
 import './style/index.less';
 import useInterceptor from './hooks/useInterceptor';
+import Interceptor from './components/Interceptor';
 
 const Router: React.FC = ({ children }) => {
   if (DEVMODE) {
@@ -28,6 +29,7 @@ export const Root: React.FC<{}> = ({}) => {
   return (
     <AuthConext.Provider value={authContext}>
       <Router>
+        <Interceptor />
         <Switch>
           <Route path="/login" component={Login} exact />
           <Layout>
